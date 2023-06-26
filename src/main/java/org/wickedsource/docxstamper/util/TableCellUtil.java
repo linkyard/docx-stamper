@@ -1,11 +1,10 @@
 package org.wickedsource.docxstamper.util;
 
+import jakarta.xml.bind.JAXBElement;
 import org.docx4j.wml.ObjectFactory;
 import org.docx4j.wml.P;
 import org.docx4j.wml.Tbl;
 import org.docx4j.wml.Tc;
-
-import javax.xml.bind.JAXBElement;
 
 
 public class TableCellUtil {

@@ -1,5 +1,6 @@
 package org.wickedsource.docxstamper.util.walk;
 
+import jakarta.xml.bind.JAXBElement;
 import org.docx4j.XmlUtils;
 import org.docx4j.openpackaging.packages.WordprocessingMLPackage;
 import org.docx4j.openpackaging.parts.WordprocessingML.FooterPart;
@@ -10,7 +11,6 @@ import org.docx4j.relationships.Relationship;
 import org.docx4j.wml.*;
 import org.wickedsource.docxstamper.api.coordinates.*;
 
-import javax.xml.bind.JAXBElement;
 import java.util.ArrayList;
 import java.util.List;
 
