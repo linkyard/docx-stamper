@@ -40,11 +40,22 @@ java {
 }
 
 publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/linkyard/docx-stamper")
+            credentials {
+                username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
+                password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
+            }
+        }
+    }
     publications {
-        mavenJava(MavenPublication) {
+        gpr(MavenPublication) {
             from components.java
 
-            groupId = 'org.wickedsource.docx-stamper'
+            // groupId = 'org.wickedsource.docx-stamper'
+            groupId = 'ch.linkyard.docx-stamper'
             artifactId =  'docx-stamper'
             version = project.version
             pom {
