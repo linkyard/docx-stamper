@@ -41,11 +41,12 @@ java {
 
 publishing {
     publications {
-        mavenPublication(MavenPublication) {
+        mavenJava(MavenPublication) {
             from components.java
-            groupId 'org.wickedsource.docx-stamper'
-            artifactId 'docx-stamper'
-            version project.version
+
+            groupId = 'org.wickedsource.docx-stamper'
+            artifactId =  'docx-stamper'
+            version = project.version
             pom {
                 name = 'docx-stamper'
                 description = 'Template engine for .docx documents.'
