@@ -11,7 +11,7 @@ repositories {
 }
 
 // run gradle with "-Dsnapshot=true" to automatically append "-SNAPSHOT" to the version
-version = '1.5.0' + (Boolean.valueOf(System.getProperty("snapshot")) ? "-SNAPSHOT" : "")
+version = System.getenv("VERSION") ?: "dev-SNAPSHOT"
 sourceCompatibility = 11
 
 ext {
