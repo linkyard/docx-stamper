@@ -25,15 +25,15 @@ ext{
 
 dependencies {
     implementation('commons-io:commons-io:2.7')
-    implementation("org.javassist:javassist:3.21.0-GA")
-    implementation("org.springframework:spring-expression:4.3.6.RELEASE")
+    implementation("org.javassist:javassist:3.29.2-GA")
+    implementation("org.springframework:spring-expression:5.3.28")
 
     // We want docx-stamper to be usable with any docx4j version, so the dependency to docx4J
     // has to be provided by the client.
     compileOnly("org.docx4j:docx4j-JAXB-ReferenceImpl:${docx4JVersion}")
     
     testImplementation("org.docx4j:docx4j-JAXB-ReferenceImpl:${docx4JVersion}")
-    testImplementation("junit:junit:4.4")
+    testImplementation("junit:junit:4.13.2")
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {
