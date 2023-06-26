@@ -21,6 +21,7 @@ public class Image {
 
     /**
      * @param in - content of the image as InputStream
+     * @throws IOException if image cannot be read
      */
     public Image(InputStream in) throws IOException {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -31,6 +32,7 @@ public class Image {
     /**
      * @param in - content of the image as InputStream
      * @param maxWidth - max width of the image in twip
+     * @throws IOException if image cannot be read
      */
     public Image(InputStream in, Integer maxWidth) throws IOException {
         ByteArrayOutputStream out = new ByteArrayOutputStream();

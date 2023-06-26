@@ -50,6 +50,7 @@ public class DocxStamperConfiguration {
    * {@link org.springframework.expression.EvaluationContext} which is used for evaluating expressions
    * in comments and text.
    * @param evaluationContextConfigurer the configurer to use.
+   * @return this
    */
   public DocxStamperConfiguration setEvaluationContextConfigurer(EvaluationContextConfigurer evaluationContextConfigurer) {
     this.evaluationContextConfigurer = evaluationContextConfigurer;
@@ -57,8 +58,10 @@ public class DocxStamperConfiguration {
   }
 
   /**
-   * If set to true, stamper will throw an {@link org.wickedsource.docxstamper.api.UnresolvedExpressionException}
-   * if a variable expression or processor expression within the document or within the comments is encountered that cannot be resolved. Is set to true by default.
+   * @param failOnUnresolvedExpression If set to true, stamper will throw an {@link org.wickedsource.docxstamper.api.UnresolvedExpressionException}
+   *                                   if a variable expression or processor expression within the document or within the comments is encountered that
+   *                                   cannot be resolved. Is set to true by default.
+   * @return this
    */
   public DocxStamperConfiguration setFailOnUnresolvedExpression(boolean failOnUnresolvedExpression) {
     this.failOnUnresolvedExpression = failOnUnresolvedExpression;
@@ -71,6 +74,7 @@ public class DocxStamperConfiguration {
    *
    * @param interfaceClass   the Interface which is implemented by the commentProcessor.
    * @param commentProcessor the commentProcessor implementing the specified interface.
+   * @return this
    */
   public DocxStamperConfiguration addCommentProcessor(Class<?> interfaceClass,
                                                       ICommentProcessor commentProcessor) {
@@ -91,6 +95,7 @@ public class DocxStamperConfiguration {
    * @param resolvedType the class whose objects are to be passed to the given ITypeResolver.
    * @param resolver     the resolver to resolve objects of the given type.
    * @param <T>          the type resolved by the ITypeResolver.
+   * @return this
    */
   public <T> DocxStamperConfiguration addTypeResolver(Class<T> resolvedType, ITypeResolver resolver) {
     this.typeResolvers.put(resolvedType, resolver);
@@ -102,6 +107,7 @@ public class DocxStamperConfiguration {
    * @param interfaceClass the interface whose methods should be exposed in the expression language.
    * @param implementation  the implementation that should be called to evaluate invocations of the interface methods
    *                        within the expression language. Must implement the interface above.
+   * @return this
    */
   public DocxStamperConfiguration exposeInterfaceToExpressionLanguage(Class<?> interfaceClass, Object implementation) {
     this.expressionFunctions.put(interfaceClass, implementation);
@@ -112,6 +118,7 @@ public class DocxStamperConfiguration {
    * If an error is caught while evaluating an expression the expression will be replaced with an empty string instead
    * of leaving the original expression in the document.
    * @param leaveEmpty true to replace expressions with empty string when an error is caught while evaluating
+   * @return this
    */
   public DocxStamperConfiguration leaveEmptyOnExpressionError(boolean leaveEmpty) {
     this.leaveEmptyOnExpressionError = leaveEmpty;
@@ -121,6 +128,7 @@ public class DocxStamperConfiguration {
   /**
    * Indicates if expressions that resolve to null should be processed.
    * @param replaceNullValues true to replace null value expression with resolved value (which is null), false to leave the expression as is
+   * @return this
    */
   public DocxStamperConfiguration replaceNullValues(boolean replaceNullValues) {
     this.replaceNullValues = replaceNullValues;
@@ -128,7 +136,7 @@ public class DocxStamperConfiguration {
   }
 
   /**
-   * Creates a {@link DocxStamper} instance configured with this configuration.
+   * @return a {@link DocxStamper} instance configured with this configuration.
    */
   public DocxStamper build() {
     return new DocxStamper(this);

@@ -12,7 +12,7 @@ import java.util.List;
  * A "Run" defines a region of text within a docx document with a common set of properties. Word processors are
  * relatively free in splitting a paragraph of text into multiple runs, so there is no strict rule to say over how many
  * runs a word or a string of words is spread.
- * <p/>
+ * <p>
  * This class aggregates multiple runs so they can be treated as a single text, no matter how many runs the text spans.
  * Call addRun() to add all runs that should be aggregated. Then, call methods to modify the aggregated text. Finally,
  * call getText() or getRuns() to get the modified text or the list of modified runs.

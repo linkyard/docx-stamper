@@ -19,13 +19,12 @@ import org.wickedsource.docxstamper.util.CommentWrapper;
  * <li>Create an implementation of your interface</li>
  * <li>Register your comment processor with DocxStamper</li>
  * </ol>
- * </p>
- * <p><strong>1. Creating a comment processor interface</strong><br/>
+ * <p><strong>1. Creating a comment processor interface</strong><br>
  * For example, if you want to create a comment processor that
  * makes a paragraph of text bold based on some condition, you would create an interface with the method
  * boldIf(boolean condition).
  * </p>
- * <p><strong>2. Creating an implementation of your interface</strong><br/>
+ * <p><strong>2. Creating an implementation of your interface</strong><br>
  * Your implementation class must also implement the Interface
  * ICommentProcessor. To stay in the above example, when the boldIf method is called, simply keep track of the paragraphs that are to be made bold.
  * The currently processed paragraph is passed into the method setCurrentParagraphCoordinates() before your own method
@@ -33,7 +32,7 @@ import org.wickedsource.docxstamper.util.CommentWrapper;
  * Within the method commitChanges() you then do the manipulations on the word document, i.e. make the paragraphs
  * that were commented bold.
  * </p>
- * <p><strong>3. Registering you comment processor with DocxStamper</strong><br/>
+ * <p><strong>3. Registering you comment processor with DocxStamper</strong><br>
  * Register your comment processor in DocxStamper by calling DocxStamperConfiguration#addCommentProcessor().
  * </p>
  */

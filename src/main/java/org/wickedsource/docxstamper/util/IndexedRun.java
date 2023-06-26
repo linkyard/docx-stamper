@@ -42,6 +42,9 @@ public class IndexedRun {
 
     /**
      * Determines whether the specified range of start and end index touches this run.
+     * @param globalStartIndex the global index of the start
+     * @param globalEndIndex   the global index of the end
+     * @return true if touched
      */
     public boolean isTouchedByRange(int globalStartIndex, int globalEndIndex) {
         return ((startIndex >= globalStartIndex) && (startIndex <= globalEndIndex))

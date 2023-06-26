@@ -97,7 +97,6 @@ public class CommentUtil {
 	 * comment from the comments.xml part).
 	 * @return the concatenated string of all paragraphs of text within the comment or
 	 * null if the specified object is not commented.
-	 * @throws Docx4JException in case of a Docx4J processing error.
 	 */
 	public static Comments.Comment getCommentFor(ContentAccessor object,
 			WordprocessingMLPackage document) {
@@ -137,7 +136,8 @@ public class CommentUtil {
 	}
 
 	/**
-	 * Returns the string value of the specified comment object.
+	 * @param comment the comment object to get the text from
+	 * @return the string value of the specified comment object.
 	 */
 	public static String getCommentString(Comments.Comment comment) {
 		StringBuilder builder = new StringBuilder();
