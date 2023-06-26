@@ -1,9 +1,9 @@
 package org.wickedsource.docxstamper.util.walk;
 
+import jakarta.xml.bind.JAXBElement;
 import org.docx4j.XmlUtils;
 import org.docx4j.wml.*;
 
-import javax.xml.bind.JAXBElement;
 
 public abstract class DocumentWalker {
 
