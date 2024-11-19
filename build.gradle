@@ -18,13 +18,13 @@ ext {
     bintrayUser = System.getProperty("bintray.user")
     bintrayKey = System.getProperty("bintray.key")
     buildNumber = System.getProperty("build.number")
-    docx4JVersion = System.getProperty("docx4j.version") ? System.getProperty("docx4j.version") : '11.4.9'
+    docx4JVersion = System.getProperty("docx4j.version") ? System.getProperty("docx4j.version") : '11.5.0'
 }
 
 dependencies {
-    implementation('commons-io:commons-io:2.7')
-    implementation("org.javassist:javassist:3.29.2-GA")
-    implementation("org.springframework:spring-expression:5.3.28")
+    implementation('commons-io:commons-io:2.16.1')
+    implementation("org.javassist:javassist:3.30.2-GA")
+    implementation("org.springframework:spring-expression:6.2.0")
 
     // We want docx-stamper to be usable with any docx4j version, so the dependency to docx4J
     // has to be provided by the client.
