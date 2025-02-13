@@ -18,7 +18,7 @@ ext {
     bintrayUser = System.getProperty("bintray.user")
     bintrayKey = System.getProperty("bintray.key")
     buildNumber = System.getProperty("build.number")
-    docx4JVersion = System.getProperty("docx4j.version") ? System.getProperty("docx4j.version") : '11.5.0'
+    docx4JVersion = System.getProperty("docx4j.version") ? System.getProperty("docx4j.version") : '11.5.2'
 }
 
 dependencies {
